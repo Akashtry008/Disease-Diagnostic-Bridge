@@ -1,0 +1,33 @@
+GLOBAL RARE-DISEASE DIAGNOSTIC BRIDGE (RAG) - FOLDER STRUCTURE
+
+d:\Global Rare-Disease Diagnostic Bridge - RAG
+│
+├── .agents/                               # Custom AI behavior scripts & configurations
+│
+├── public/                                # Static asset files (logos, favicons)
+│
+├── src/                                   # Application Source Root
+│   │
+│   ├── assets/                            # Local image, icon, and illustration assets
+│   │
+│   ├── components/                        # React Structural View Components
+│   │   ├── DiagnosticBridge.jsx           # RAG reasoning scanner & article matching indicators
+│   │   ├── DiagnosticReport.jsx           # Synthesis outputs (Pro citations & Layman translate)
+│   │   └── SymptomIntake.jsx              # Clinical phenotype inputs & constraints card
+│   │
+│   ├── data/                              # RAG Information Vault & Algorithms
+│   │   ├── analysisEngine.js              # Tokenizer, matching weight systems & similarity checks
+│   │   └── researchDatabase.js            # Curated clinical database of rare-disease papers
+│   │
+│   ├── App.jsx                            # Core entry view (Portals, Sidebars, Onboarding, Canvas)
+│   ├── index.css                          # Modern Cobalt/Emerald glassmorphism styles & media queries
+│   └── main.jsx                           # React DOM root render bootstrapper
+│
+├── .gitignore                             # Files excluded from Git tracking (node_modules, etc.)
+├── eslint.config.js                       # Code formatting and quality guidelines
+├── index.html                             # Main HTML layout anchor
+├── package-lock.json                      # Locked npm dependency version tree
+├── package.json                           # Scripts, metadata, and dependencies configuration
+├── vite.config.js                         # Vite build system bundle configurations
+│
+└── Documentation.txt                      # Pre-existing project logs and notes

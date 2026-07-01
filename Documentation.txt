@@ -1,0 +1,102 @@
+# Global Rare-Disease Diagnostic Bridge - RAG
+# Project Documentation & Architecture Guide
+
+## 1. Project Overview
+The Global Rare-Disease Diagnostic Bridge is a production-grade, clinician-focused Intelligence Engine. It is designed specifically for the Indian healthcare landscape to assist medical professionals in diagnosing rare genetic disorders by "bridging" clinical symptoms (phenotypes) with a vast database of regional and global research documents using Agentic RAG (Retrieval-Augmented Generation) logic.
+
+---
+
+## 2. Technology Stack
+The application is built using a modern, high-performance web stack:
+- **Core Framework**: React 19 (Latest)
+- **Build Tool**: Vite (Ultra-fast development and bundling)
+- **Logic**: Javascript (ESM)
+- **Styling**: Vanilla CSS (Custom Design System using HSL tokens and modern typography)
+- **Icons**: Lucide React (Enterprise-grade medical and utility icons)
+- **Animations**: Framer Motion (Smooth micro-interactions and transitions)
+- **State Management**: React Hooks (useState, useEffect, useRef)
+- **Data Persistence**: LocalStorage (For clinician profile and session persistence)
+
+---
+
+## 3. How It Was Built
+The project follows a modular, component-based architecture:
+- **Design System**: A custom CSS variable system (`index.css`) was established first, using a professional medical palette (Emerald for primary actions, Slate for backgrounds and text).
+- **Component Architecture**: 
+  - `App.jsx`: The central intelligence hub and dashboard.
+  - `SymptomIntake.jsx`: Handles clinical data entry.
+  - `DiagnosticBridge.jsx`: A visual viewport that simulates the RAG process (scanning and retrieval).
+  - `DiagnosticReport.jsx`: Generates and displays data-backed diagnostic pathways.
+- **Knowledge Vault**: A curated database of genetic research (`researchDatabase.js`) serves as the "Ground Truth" for the RAG engine.
+
+---
+
+## 4. Key Features & Functionalities
+- **Agentic RAG Engine**: Analyzes symptom clusters and retrieves matching research papers from the Knowledge Vault.
+- **Diagnostic Report**: Provides confidence scores, clinical evidence, and suggested next steps (e.g., specific genetic tests like WES/WGS).
+- **Knowledge Vault**: A searchable archive of 15+ curated research documents focusing on South Asian genetic cohorts.
+- **Semantic Search**: An agentic search bar for quick retrieval of genes, pathways, and regional vectors.
+- **Clinician Profile**: A fully editable and persistent profile module for healthcare providers.
+- **Security Dashboard**: Real-time monitoring of encryption (AES-256), compliance (HIPAA/DPDP), and audit trails.
+- **Real-time Analytics**: Dynamic tracking of resolved cases, active bridges, and knowledge nodes.
+
+---
+
+## 5. Step-by-Step Build Process
+1. **Environment Setup**: Initialize a Vite project with React.
+2. **Design Foundation**: Create `index.css` with HSL color tokens, Inter/JetBrains Mono typography, and responsive grid layouts.
+3. **Data Layering**: Build the `researchDatabase.js` containing scientific snippets and metadata.
+4. **Dashboard Skeleton**: Implement the sidebar-based navigation and main viewport structure in `App.jsx`.
+5. **Intake & Logic**: Develop the `SymptomIntake` form and the `generateMockAnalysis` function to simulate AI reasoning.
+6. **Visual Synthesis**: Create the `DiagnosticBridge` with Framer Motion animations to visualize the data "retrieval" process.
+7. **Reporting Layer**: Build the `DiagnosticReport` component to display findings in a structured, clinical format.
+8. **Polishing**: Add the Profile Editor, Security Logs, and Search functionalities for a complete enterprise experience.
+
+---
+
+## 6. How to Run & Build
+
+### Prerequisites
+- Node.js (Latest LTS version recommended)
+- npm or yarn
+
+### Installation
+1. Clone or extract the project files.
+2. Open a terminal in the project root directory.
+3. Run the following command to install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running Locally
+To start the development server with Hot Module Replacement (HMR):
+```bash
+npm run dev
+```
+The application will be available at `http://localhost:5173`.
+
+### Building for Production
+To create a production-optimized bundle:
+```bash
+npm run build
+```
+The output will be generated in the `dist/` directory.
+
+### Preview Production Build
+To test the production build locally:
+```bash
+npm run preview
+```
+
+---
+
+## 7. User Workflow (How to Use)
+1. **Intake**: Enter clinical symptoms or phenotypes into the "Clinical Symptom Intake" panel (e.g., "Microcephaly, spasticity").
+2. **Bridge**: Click "Initiate Diagnostic Bridge". The engine will scan the Knowledge Vault.
+3. **Report**: Review the generated "Clinical Intelligence Report" which highlights potential genetic matches, confidence scores, and evidence.
+4. **Vault**: Browse the "Knowledge Vault" tab to read full research extracts.
+5. **Export**: Use the printer icon to export the report or the security tab to download system logs.
+6. **Profile**: Update your clinician details and organization in the "Profile" section.
+
+---
+*Created by Antigravity AI for the Global Rare-Disease Diagnostic Network.*

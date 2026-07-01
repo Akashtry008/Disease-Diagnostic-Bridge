@@ -1,0 +1,69 @@
+DIAGNOSTIC BRIDGE PLATFORM - FILE AND DIRECTORY GUIDE
+
+This document describes the role, purpose, and behavior of every directory and file in the "Global Rare-Disease Diagnostic Bridge (RAG)" workspace.
+
+========================================================================
+1. ROOT CONFIGURATION & BUILD FILES
+========================================================================
+* package.json:
+  Defines project metadata, dependencies (React, Lucide, Framer Motion), and command scripts (dev, build, lint, preview).
+* package-lock.json:
+  Locks down the exact version tree of nested node modules to ensure identical builds across different developers' systems.
+* vite.config.js:
+  Contains build-engine settings for Vite, loading the React compilation plugin and defining host parameters.
+* index.html:
+  The entry point HTML document. Anchors the React DOM root hook (`<div id="root">`) and boots the source code script.
+* eslint.config.js:
+  Specifies static code analysis constraints (warnings, errors, variables) to maintain clean and reliable React code.
+* .gitignore:
+  Tells Git which files and folders to ignore (e.g. node_modules, build dist, local caches).
+
+========================================================================
+2. SOURCE CODE DIRECTORY (src/)
+========================================================================
+The `src` folder houses all the executable code.
+
+* main.jsx:
+  The React entry script. Loads React, binds the `App` component, and renders it onto the `index.html` root node.
+* index.css:
+  The central stylesheet. Establishes custom design variable tokens (colors, paddings, sizing) and responsive media queries.
+* App.jsx:
+  The parent container of the web application. Manages all states (active user session, search outcomes, admin mode status, onboarding step indices) and handles clinician login, self-registration, and portal switching.
+
+------------------------------------------------------------------------
+2.1. Structural Components (src/components/)
+------------------------------------------------------------------------
+* SymptomIntake.jsx:
+  A clean viewport container allowing clinicians to input patient symptoms. Contains the text area, submit handlers, and checklist reminders.
+* DiagnosticBridge.jsx:
+  Animates the RAG scanning indicators. Displays document matching visual overlays as it processes terms against indexed publications.
+* DiagnosticReport.jsx:
+  Structures the final output report, detailing the professional HPO citations list, the caregiver translation, recommended pathways, and the clinical disclaimer card.
+
+------------------------------------------------------------------------
+2.2. Vector RAG Algorithms & Vault (src/data/)
+------------------------------------------------------------------------
+* researchDatabase.js:
+  The local specialized Vector Vault database. Contains peer-reviewed scientific publications on rare genetic conditions (Dravet, Rett, Episodic Ataxia, Gaucher).
+* analysisEngine.js:
+  The semantic search engine. Tokenizes search queries, calculates overlap frequencies, grades match confidence scores, and constructs layman translations.
+
+========================================================================
+3. LOCAL AI SETTINGS (.agents/)
+========================================================================
+* .agents/
+  A directory containing custom agent instructions, local rules, and workspace skills.
+
+========================================================================
+4. ARCHIVED LOGS & NEW DEVELOPER DOCS
+========================================================================
+* Documentation.txt:
+  Pre-existing logs detailing visual upgrades, audit tracking integrations, and project requirements.
+* folder_structure.txt:
+  ASCII Tree chart mapping directories and files.
+* research_report.txt:
+  A scientific medical research paper detailing the RAG platform's rationale, similarity metrics, and latency comparisons.
+* build_manual.txt:
+  A step-by-step developer build guide outlining commands and scripts to build this application from scratch.
+* file_guide.txt:
+  This document (explaining the role of all files and folders).
